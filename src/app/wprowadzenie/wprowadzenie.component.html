@@ -1,0 +1,22 @@
+<h1>Witaj w grze</h1>
+<p>Wprowadź swoje imię i adres e-mail, aby rozpocząć grę</p>
+<form [formGroup]="form">
+  <div>
+    <label for="name">Imię:</label>
+    <input type="text" id="name" formControlName="name">
+    <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)">
+        <div *ngIf="form.get('name')?.hasError('required')">Pole wymagane</div>
+
+    </div>
+  </div>
+  <div>
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" formControlName="email">
+    <div *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">
+        <div *ngIf="form.get('email')?.hasError('required')">Pole wymagane</div>
+        <div *ngIf="form.get('email')?.hasError('email')">Nieprawidłowy adres e-mail</div>
+
+    </div>
+  </div>
+  <button type="submit" [disabled]="form.invalid" (click)="startGame()">Start</button>
+</form>
