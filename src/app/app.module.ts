@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { WprowadzenieComponent } from './wprowadzenie/wprowadzenie.component';
+import {TetrisCoreModule} from 'ngx-tetris';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { WprowadzenieComponent } from './wprowadzenie/wprowadzenie.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-  ],
+    TetrisCoreModule,
+  ],  
   providers: [],
   bootstrap: [AppComponent]
 })
