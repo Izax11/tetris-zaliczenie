@@ -1,1 +1,7 @@
-<app-wprowadzenie></app-wprowadzenie>
+<div *ngIf="currentPage === 'intro'">
+  <app-wprowadzenie [startGameParent]="startGameFunc"></app-wprowadzenie>
+</div>
+
+<div *ngIf="currentPage === 'game'">
+  <app-gra [playerName]="playerName" [endGameParent]="exitGameFunc"></app-gra>
+</div>

@@ -1,0 +1,18 @@
+<h2>Witaj {{playerName}}!</h2>
+<p>Przed Tobą emocjonująca rozgrywka!</p>
+<p>Status gry: {{gameStatus}}</p>
+<p>Liczba punktów: {{points}}</p>
+<p>Czas gry: {{gameTime}}</p>
+<button (click)="endGame()">Wyjdź z gry</button>
+<tetris-core #game
+(lineCleared)="onLineCleared()"></tetris-core>
+ 
+<button (click)="onactionStart()">Start</button>
+<button (click)="onactionStop()">Stop</button>
+<button (click)="game.actionReset()">Reset</button>
+<button (click)="game.actionRotate()">Obrót</button>
+<button (click)="game.actionLeft()">Lewo</button>
+<button (click)="game.actionRight()">Prawo</button>
+<button (click)="game.actionDown()">Dół</button>
+<button (click)="game.actionDrop()">Opuść</button>
+

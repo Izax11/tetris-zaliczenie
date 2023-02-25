@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -11,6 +11,8 @@ export class WprowadzenieComponent {
   name = '';
   email = '';
   
+  @Input() startGameParent: Function | undefined;
+
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -22,6 +24,7 @@ export class WprowadzenieComponent {
     if (this.form.valid) {
       this.name = this.form.value.name;
       this.email = this.form.value.email;
+      this.startGameParent && this.startGameParent(this.name);
 
     }
   }
